@@ -1,1 +1,7 @@
-# notes_on_papers
+- __Dimensionality Reduction__
+  - [SNE](./Dimensionality_Reduction/sne.ipynb)
+  - [TSNE](./Dimensionality_Reduction/tsne.ipynb)
+  
+  
+- __NLP__
+

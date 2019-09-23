@@ -43,20 +43,21 @@ This paper focuses on task 2)
 
 1) Use the KB freebase for distant supervision. At the time of this paper (July 2008), Freebase had 116 million instances of 7300 relations between 9 million entities. After some filtering,
 this was narrowed to to 1.8 million instances of 102 relations connecting 940000 entities
-2) Training - For every entity pair and relation tuple which exists in KB
-        1) Identify all sentences which contain the entity pair (Entity mapping is done by an NER tagger)
-        2) Get features from each of these sentences, and concat to form features for that entity pair
-        3) Have label of training data as the relation which exists in KB  
+2) Training -   
+        For every entity pair and relation tuple which exists in KB  
+        1) Identify all sentences which contain the entity pair (Entity mapping is done by an NER tagger)  
+        2) Get features from each of these sentences, and concat to form features for that entity pair  
+        3) Have label of training data as the relation which exists in KB    
         4) For negative classes, select entity pairs randomly which do not occur in the KB, and extract features for them. There could be false negatives (two entities selected randomly are actually related, but relation is not present in KB); but this problem is estimated to be small
         5) train ML model of choice (this paper uses a logistic regression model with gaussian/L2 regularization). Note that this is a multi-label, multi class classifer (ie : two entities can be related by more than one relationship)
         For example, both (is_director,steven_spielberg, saving_private_ryan) and (is_writer,steven_spielberg,saving_private_ryan) could be true. Therefore, given entity pair (steven_spielberg,saving_private_ryan); both is_writer and is_director should be predicted  
         
-3) Testing
-        1) Identify all entities in corpus using NER tagger
+3) Testing  
+        1) Identify all entities in corpus using NER tagger  
         2) For every pair of entities which we want a label for (for which label is not already present in KB :) ) - get features from each and every sentence which holds that entity pair; pool
         (Example) : Given entity pair (dickens,david copperfield); we find all sentences where both dickens and david copperfield are present; Let's say there are 10 such sentences in corpus
-        If we extract 3 features from each sentence, totally, we get 3*10 = 30 features which we pool  
-        3) Apply model, get prediction of relation between entity pair     
+        If we extract 3 features from each sentence, totally, we get 3*10 = 30 features which we pool    
+        3) Apply model, get prediction of relation between entity pair       
         4) Since features from multiple sentences are potentially combined for each prediction, we get information which may not have been present in a single sentence  
         Eg: in paper : Given tuple (steven_spielberg, saving_private_ryan), we want to predict relation is_director  
         First sentence is : Steven Spielberg’s film Saving Private Ryan is loosely based on the brothers’ story.  

@@ -194,7 +194,8 @@ VSM's can be used in supervised (any algorithm which can use real valued vectors
 
 
 # Future of VSM  
-1) One common criticism - order is ignored in VSM - can be handled by using different weightings of contributions of vector components (Mitchell and Lapata 2008))   
+1) One common criticism - order is ignored in VSM - can be handled by using different weightings of contributions of vector components (Mitchell and Lapata 2008))  
+ 
 
 
 

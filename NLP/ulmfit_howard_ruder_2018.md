@@ -57,7 +57,7 @@ As of 2018 - NLP lags behind in use of transfer learning - some methods used are
     - Triangular learning rate
         a) The earlier  step (discriminative fine tuning) used different learning rates for different layers, now, for same layer, we vary learning rate with time  
         b) We linearly increase learning rate with time/epochs, and then decrease learning rates after a cutoff  
-        ![triangular_learning_rate](ulmfit_pic_1.png "Image Credit Equation 3 in paper")    
+        ![triangular_learning_rate](ulmfit_pic1.png "Image Credit Equation 3 in paper")    
         
         Credit : Equation 3 in paper  
         
@@ -68,7 +68,7 @@ As of 2018 - NLP lags behind in use of transfer learning - some methods used are
             * p is fraction of no of iterations we have currently increased or decreased divided by total no of iterations in increase or decrease phase  
             * eta<sub>max</sub>  is max learning rate used (recommended value 0.01 for the top most layer ? )  
             * ratio - How much smaller the lowest LR is from max LR rate (recommended value 32)  
-            ![triangular_learning_rate_diagram](ulmfit_pic_2.png "Figure 2 in paper")    
+            ![triangular_learning_rate_diagram](ulmfit_pic2.png "Figure 2 in paper")    
             
             Credit : Figure 4 in paper  
             
@@ -115,7 +115,7 @@ Large scale AG news and DBPedia ontology datasets created by Zhang (2015)
 
 # Results
 
-![results_1](ulmfit_pic_3.png "Tables 2 and 3 in paper") 
+![results_1](ulmfit_pic3.png "Tables 2 and 3 in paper") 
 
 
     Credit : Tables 2 and 3 in paper  
@@ -127,7 +127,7 @@ Large scale AG news and DBPedia ontology datasets created by Zhang (2015)
 
 1) Impact of finetuning LM on performance - two cases investigated - finetuning LM only on labeled classification target data, and finetuning LM on larger target corpus
 
-![analysis_1](ulmfit_pic_4.png "Figure 3 in paper")
+![analysis_1](ulmfit_pic4.png "Figure 3 in paper")
 
 
 
@@ -138,27 +138,27 @@ Large scale AG news and DBPedia ontology datasets created by Zhang (2015)
         
 2) Impact of pretrained LM (on wikitext, etc)        
 
-![analysis_2](ulmfit_pic_5.png "Table 4 in paper")  
+![analysis_2](ulmfit_pic5.png "Table 4 in paper")  
 
     Credit : Table 4 in paper
 
 
 
 3) Impact of LM used  - AWD LSTM vs Regular LSTM     
-![analysis_3](ulmfit_pic_6.png "Table 5 in paper")   
+![analysis_3](ulmfit_pic6.png "Table 5 in paper")   
 
 
     Credit : Table 5 in paper
 
 
 4) Impact of LM finetuning - No LM finetuning vs Full LM finetuning with and without discriminative fine tuning and slanted triangular learning rates  
-![analysis_4](ulmfit_pic_7.png "Table 6 in paper")   
+![analysis_4](ulmfit_pic7.png "Table 6 in paper")   
 
     Credit : Table 6 in paper  
     
     
 5) Impact of classifier finetuning  - training from scratch vs finetuning full model vs finetuning only last layer vs chain-thaw vs gradual unfreezing with and without discriminative fine tuning and slanted triangular learning rates  
-![analysis_5](ulmfit_pic_8.png "Table 6 in paper")   
+![analysis_5](ulmfit_pic8.png "Table 6 in paper")   
 
 
     Credit : Table 7 in paper  
@@ -170,7 +170,7 @@ Large scale AG news and DBPedia ontology datasets created by Zhang (2015)
     Next, we observe ulmfit finetuning paradigm compares with training from scratch as # of epoch increases, we observe that training from scratch results in catastrophic forgetting - error increases with no of epochs on validation data set, this is not the case with ulmfit  
     
     
-    ![analysis_6](ulmfit_pic_9.png "Figure 4 in paper")   
+    ![analysis_6](ulmfit_pic9.png "Figure 4 in paper")   
     
     Credit : Figure 4 in paper  
     

@@ -38,12 +38,12 @@ No projection layer exists ((n-1)*m) term, only input , hidden and output layer.
 
 Complexity Q = h*h  (hidden to hidden connections)  +  
                h*|V|   (hidden to final softmax layer)  
-               
+
 Just as in NNLM, h*|V| can be simplified to h*ln(|V|), therefore , most of the complexity is the h*h term  
-               
-               
- 
-# Method in more detail 
+
+
+
+# Method in more detail
 
 Two architectures implemented - Continuous bag of words model (CBOW) and continuous skip gram   
 
@@ -55,44 +55,44 @@ Given context, predict word
     a) No non-linear layer (the h layer is removed)  
     b) Instead of using only previous n-1 terms, use some words next to the word too. Therefore, slight change in notation - instead of n-1 representing previous n-1 words, we use n which is a combination of previous and next words (best performance was with 4 previous and 4 next words)  
     c) Instead of the (n)*m term (each of the n words is a seperate input), these are averaged to create just one vector of dimension m   
-    
+
     Therefore, complexity is simply  
-    
+
     Q = n*m (Dimension of embedding layer - n words, each of dimension m) +    
         (m*ln(|V|))  - embedding of n-1 words averaged to get 1 vector of dimension m, which is passed through heirarchical softmax  
-        
-    Much simpler model !! 
-    
+
+    Much simpler model !!
+
     ![CBOW_architecture](w2vec1_pic1.png "Image Credit Figure 1 in paper")    
-    
+
     Image Credit : Figure 1 in paper     
-    
-    
 
 
-    
-    
+
+
+
+
 ## Continous skip gram  
 
 Given word, predict context  
 
 1) Flipped version of CBOW - given only representation of 1 word as input, predict C words before and after current word    
   In implementation, C is an upper limit, For each iteration, a random integer R between 1 and C is chosen , and 2*R words used   . Also, words further away from current word are sampled less than words nearer
- 
- 
-    Therefore upper limit on complexity is 
-    
+
+
+    Therefore upper limit on complexity is
+
     Q = m (dimension of single word , paper uses C*m instead of m here, don't understand how)  +    
         m*ln(|V|)*C  (For C words, actually 2*C forward and backward), we get a seperate heirarchical softmax output ie 2C seperate classifications  +
-        
+
 
   ![skipgram_architecture](w2vec1_pic2.png "Image Credit Figure 1 in paper")   
-  
+
   Image Credit : Figure 1 in paper  
-  
-  
-    
-    
+
+
+
+
 ## Training Details  
 
 Google news corpus used for training vectors - 6B tokens, vocab restricted to 1MM most frequent words  
@@ -106,58 +106,55 @@ Google news corpus used for training vectors - 6B tokens, vocab restricted to 1M
 Authors create a test set which represents five types of semantic questions and 9 types of syntactic questions  
 contains 8869 semantic and 10675 syntactic questions (examples below)   
 
-For each of the question types, Use word analogy for a formal quantification of accuracy of word vectors 
+For each of the question types, Use word analogy for a formal quantification of accuracy of word vectors
 i.e. If we find vector(”biggest”) − vector(”big”) + vector(”small”), this should be closest (cosine distance) to vector("smallest")  
-    
 
 
-    ![results_tasks_tested](w2vec1_pic3.png "Image Credit Table 1 in paper")   
-    
-    
+
+   ![results_tasks_tested](w2vec1_pic3.png "Image Credit Table 1 in paper")   
+
+
   Image Credit : Table 1 in paper    
-  
-  
-  
+
+
+
 Tried different vector dimensions, and training data size - observed that both have to be increased together to improve performance, otherwise bottleneck reached  
 
 
 
 
-    ![results_data_vec_size](w2vec1_pic4.png "Image Credit Table 2 in paper")     
-    
-    
+  ![results_data_vec_size](w2vec1_pic4.png "Image Credit Table 2 in paper")     
+
+
     Image Credit : Table 2 in paper   
-    
-    
-    
-    
+
+
+
+
 Compared RNNLM, NNLM, CBOW and skip gram     
 
-     ![results_model_comparison](w2vec1_pic5.png "Image Credit Table 3 in paper")    
-     
-     
-     
+  ![results_model_comparison](w2vec1_pic5.png "Image Credit Table 3 in paper")    
+
+
+
      Image Credit : Table 3 in paper        
-     
-     
-     
+
+
+
 Variation of performance with epoch no, and training time, on single CPU  
 
 
 
-    ![results_epoch_traintime](w2vec1_pic6.png "Image Credit Table 5 in paper")    
-    
-    Image Credit : Table 5 in paper 
+  ![results_epoch_traintime](w2vec1_pic6.png "Image Credit Table 5 in paper")    
+
+    Image Credit : Table 5 in paper
 
 
 
 Performance using a distributed framework of CPU's called Distbelief, which enables longer dimension word vectors to be trained  
 
 
-    ![results_distributed](w2vec1_pic7.png "Image Credit Table 5 in paper")    
-    
-    
+  ![results_distributed](w2vec1_pic7.png "Image Credit Table 5 in paper")    
+
+
     Image Credit : Table 6 in paper   
-
-
-

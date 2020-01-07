@@ -57,13 +57,20 @@ Extensions to skip gram model -
 
    has this term  ![negative_sampling](w2vec2_pic4.png "Image Credit Equation 4 in paper")   
 
-   Image credit : equation 4 in paper
+   Image credit : equation 4 in paper  
+   
+   where \sigma is the logistic function.  
 
    instead of P(wo|wI) in skip gram objective  
    Intuition - instead of updating during backprop all the d*W weights where d is embedding size, and W is vocab size;
    update weights only corresponding to positive word, and a small number of negative words (k) chosen randomly  
    The best distribution used to randomly select k words was found to be a unigram distribution raised to 3/4 power.  
    k is found to be best in range 2-5 for large datasets and 5-20 for small data sets  
+   
+   [here](https://arxiv.org/pdf/1402.3722.pdf) is a derivation of the negative sampling cost function formally.  
+   In brief, the negative sampling cost function solves a *different* problem from the original cost function - instead of solving a multinomial classification problem 
+   for each word in the context (thus the softmax), for each (word,context word) tuple, we feed a true pair (word and actual word from context) and k false pairs (word and random word not occuring in context)  , 
+   This is cast as a cost function as binary classification problems with a logistic cost function; the true pair is captured as log P(wI,wc), and k false pairs are captured as 1-log P(wi,Wc') where for each of the k false pairse (the 1- because these words should not occur in the contexts)  
 
 
 4) Subsampling  of frequent words  
@@ -79,9 +86,15 @@ Extensions to skip gram model -
 
    Advantage - it removes frequent words mostly , thus reducing time taken to train model  
    In addition, it can learn better representations of frequent words because it doesn't use all possible contexts to learn frequent word representations  
+   Note : this technique is applied on both words and contexts before generating contexts and word tuples for training  
+   
 
 
-5) Handling phrases  
+5) Rare word pruning  
+
+   In addition, words appearning < min_count times are discarded from both words and contexts   before generating contexts    
+
+6) Handling phrases  
 
    phrases that appear frequently in some contexs and infrequently in some others such as "New york times" are replaced during preprocessing by a single tokens  
    universally common tokens such as "this is" are kept unchanged  

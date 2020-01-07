@@ -67,7 +67,7 @@ Extensions to skip gram model -
    The best distribution used to randomly select k words was found to be a unigram distribution raised to 3/4 power.  
    k is found to be best in range 2-5 for large datasets and 5-20 for small data sets  
    
-   [here](https://arxiv.org/pdf/1402.3722.pdf) is a derivation of the negative sampling cost function formally.  
+   [here (Goldberg and Levy 2014)](https://arxiv.org/pdf/1402.3722.pdf) is a derivation of the negative sampling cost function formally.  
    In brief, the negative sampling cost function solves a *different* problem from the original cost function - instead of solving a multinomial classification problem 
    for each word in the context (thus the softmax), for each (word,context word) tuple, we feed a true pair (word and actual word from context) and k false pairs (word and random word not occuring in context)  , 
    This is cast as a cost function as binary classification problems with a logistic cost function; the true pair is captured as log P(wI,wc), and k false pairs are captured as 1-log P(wi,Wc') where for each of the k false pairse (the 1- because these words should not occur in the contexts)  

@@ -43,7 +43,7 @@ Separate parameters are maintained for LSTM in each direction, except that param
 Rk = {xk; hforwardk,j; hbackwardk,j | j=1..L} is the representation of the kth token, xk is embedding of token, hforwardk,j is vector at hidden layer j for token k in forward direction,  hforwardk,j is vector at hidden layer j for token k in backward direction  
 
 2) For a downstream model, all layers in R are collapsed into a single vector . In simplest case, only the top layer is selected. but more generally, a weighted sum of hidden layers are taken , 
-    ![representation](elmo_pic2.png "Image credit Equation 1 in paper")   
+    ![representation](elmo_pic1.png "Image credit Equation 1 in paper")   
     
     Image credit equation 1 in paper   
     

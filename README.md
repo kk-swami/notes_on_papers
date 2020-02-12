@@ -13,4 +13,5 @@
   - [w2vec Mikolov et al 2013 second paper](./NLP/w2vec_2_mikolov_2013.md)
   - [fasttext Bojanowski et al 2017 ](./NLP/fasttext_bojanowski_2017.md)
   - [ELMo Peters et al 2018 ](./NLP/Elmo_peters_2018.md)
+  - [CNN with w2vec Kim 2014](./NLP/cnn_textclassification_kim_2014.md)
 

@@ -45,7 +45,7 @@ Rk = {xk; hforwardk,j; hbackwardk,j | j=1..L} is the representation of the kth t
 2) For a downstream model, all layers in R are collapsed into a single vector . In simplest case, only the top layer is selected. but more generally, a weighted sum of hidden layers are taken , 
     ![representation](elmo_pic1a.png "Image credit Equation 1 in paper")   
     
-    Image credit equation 1a in paper   
+    Image credit equation 1 in paper   
     
     Note : This is similar to the attention formulation, except that for attention, weighted sum of hidden representations across tokens is obtained, here , for each token weighted sum of hidden representations across layers is obtained  
     

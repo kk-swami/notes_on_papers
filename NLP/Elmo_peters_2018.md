@@ -43,14 +43,14 @@ Separate parameters are maintained for LSTM in each direction, except that param
 Rk = {xk; hforwardk,j; hbackwardk,j | j=1..L} is the representation of the kth token, xk is embedding of token, hforwardk,j is vector at hidden layer j for token k in forward direction,  hforwardk,j is vector at hidden layer j for token k in backward direction  
 
 2) For a downstream model, all layers in R are collapsed into a single vector . In simplest case, only the top layer is selected. but more generally, a weighted sum of hidden layers are taken , 
-    ![representation](elmo_pic1.png "Image credit Equation 1 in paper")   
+    ![representation](elmo_pic1a.png "Image credit Equation 1 in paper")   
     
-    Image credit equation 1 in paper   
+    Image credit equation 1a in paper   
     
-    Note : This is similar to the attention formulation, except that for attention, weighted sum of hidden representations across tokens is obtained, here , for each tokem weighted sum of hidden representations across layers is obtained  
+    Note : This is similar to the attention formulation, except that for attention, weighted sum of hidden representations across tokens is obtained, here , for each token weighted sum of hidden representations across layers is obtained  
     
 
-3) In context of a supervised model, freeze the weights of biLM, for each tokem concatenate ELMO vector ELMOktask with xk, and pass {xk;ELMOktask} to task RNN.  
+3) In context of a supervised model, freeze the weights of biLM, for each token concatenate ELMO vector ELMOktask with xk, and pass {xk;ELMOktask} to task RNN.  
 For some tasks like SNLI and SQUAD, include ELMO at output of RNN too ! Concatenate ELMOk with hk 
 
 4) A moderate amount of dropout is added to ELMo   
@@ -126,7 +126,15 @@ reprentation are more important than biLM
   
   
 4) Sample Efficiency - Adding ELMo decreases training set size, and time taken for training to reach a benchmark performance considerably  
-   For example, SRL model reaches maximum F1 after 486 epochs without ELMo and 10 epochs with. 
+   For example, SRL model reaches maximum F1 after 486 epochs without ELMo and 10 epochs with.  
+   
+5) Visualization of weights - 
+
+    ![elmo_weights_visualization](elmo_pic7.png "Image credit Figure 2 in paper")   
+    
+    Image credit - Figure 2 in paper  
+    
+    
   
 
 

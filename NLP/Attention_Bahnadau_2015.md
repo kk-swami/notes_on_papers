@@ -73,7 +73,7 @@ Note that since Bi-RNN's are used in this paper, each hidden stage hj is a conca
 
 5) Next question - how are these alpha's obtained ? 
 
-We want to constrain that \sum{j}alpha<sub>ij<sub> = 1 in equation 4, so an obvious solution is to generate alphai1..alphaiTx  
+We want to constrain that \sum{j}alpha<sub>ij</sub> = 1 in equation 4, so an obvious solution is to generate alphai1..alphaiTx  
 using a softmax function 
 
 So alphaij are obtained by taking a softmax over energies eij as below  
@@ -140,17 +140,4 @@ Another advantage of soft alignment is that it automatically handles sentences o
 
 
 3) From results 1 above, this method is much better than conventional sentences as the sentences become longer .. 
-
-# Results  
-
-![results](awdlstm_pic4.png "Image Credit Table 1 in paper") 
-Image credit - table 1 in paper  
-
-
-# Ablation analysis  
-
-![ablation_analysis](awdlstm_pic5.png "Image Credit Table 4 in paper")  
-Image credit - table 4 in paper
-
-
 

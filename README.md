@@ -17,4 +17,5 @@
   - [AWD LSTM Merity etal 2017](./NLP/AWDLSTM_merity_2017.md)
   - [Bahdanau Attention 2015](/NLP/Attention_Bahdanau_2015.md)
   - [Luong_Attention_2015](/NLP/Attention_Luong_2015.md)
+  - [Cheng_LSTMN_2016](/NLP/LSTMN_Cheng_2016.md)
 

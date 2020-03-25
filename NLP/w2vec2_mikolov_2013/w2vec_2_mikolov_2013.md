@@ -10,7 +10,7 @@ vector space models, representations, embeddings
 
 # Significance
 
-Companion paper to the the [slightly earlier w2vec paper](./NLP/nw2vec_1_mikolov_2013.md). Talks about
+Companion paper to the the [slightly earlier w2vec paper](../w2vec1_mikolov_2013/w2vec_1_mikolov_2013.md). Talks about
 extensions to the skipgram model
 
 

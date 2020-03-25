@@ -10,7 +10,7 @@ Attention, NMT
 
 # Significance
 
-Builds on top oF Bahnadau attention [notes here](./NLP/Attention_Bahdanau_2015.md) 
+Builds on top oF Bahnadau attention [notes here](../attention_bahdanau_2015/Attention_Bahdanau_2015.md) 
 Generalizes Bahnadau attention by proposing different variants of the affinity function between si-1 and hj, using the notation in that paper
 Call this global attention
 
@@ -20,7 +20,7 @@ in source sentence
 
 # Context and summary  
 
-Same context and summary as [here](./NLP/Attention_Bahdanau_2015.md) 
+Same context and summary as [here](../attention_bahdanau_2015/Attention_Bahdanau_2015.md) 
 
 
 

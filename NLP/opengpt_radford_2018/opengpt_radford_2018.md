@@ -28,7 +28,7 @@ AWD LSTM in ulmfit for the LM.
 ## Unsupervised LM  
 
 1) Given a corpus U of tokens u1..un, use a LM to maximize 
-[LM_likelihood](opengpt1.png "Equation 1 from paper" )
+![LM_likelihood](opengpt1.png "Equation 1 from paper" )
 Image credit  - equation 1 from paper 
 
 2) For architecture, use transformer-decoder. with multi-headed self attention followed by position wise feed forward attentions.
@@ -36,7 +36,7 @@ Note that since the encoder of the transformer is not used, the sublayer in the 
 
 The equations are below : 
 
-[Transformer decoder eq](opengpt2.png "Equation 2 from paper" )  
+![Transformer decoder eq](opengpt2.png "Equation 2 from paper" )  
 
 Image credit - equation 2 from paper 
 where U = (u-k...u-2,u-1) are the k context token vectors, 
@@ -55,12 +55,12 @@ hlm (hidden state of token m after l tranformer-decoder layers).
 P(y|x1,..xm) = softmax(hlmWy)    
 4) The cost function to maximize is 
 
-[classification_cf_1](opengpt3.png "Equation 4 from paper") 
+![classification_cf_1](opengpt3.png "Equation 4 from paper") 
 Image credit - equation 4 from paper  
 
 
 5) However, adding the LM cost function too to the target classification task as a additional term with weight lambda helps.   
-[classification_cf_2](opengpt4.png "Equation 5 from paper") 
+![classification_cf_2](opengpt4.png "Equation 5 from paper") 
 Image credit - equation 5 from paper    
 
 
@@ -79,7 +79,7 @@ QA - given context document z, question q and set of possible answers ak, concat
 Each of these sequences processed independently, normalized via softmax to get distribution over answers. 
 
 
-[task_specific_transformations](opengpt5.png "Figure 1 from paper") 
+![task_specific_transformations](opengpt5.png "Figure 1 from paper") 
 
 Image credit - Figure 1 from paper  
 
@@ -109,21 +109,21 @@ lambda set to 0.5 (equal weight to finetuning, LM during LM)
 1) Textual entailment  
 
 
-[results_1](opengpt6.png "Table 2 from papers")  
+![results_1](opengpt6.png "Table 2 from papers")  
 
 Image credit - Table 2 from paper
 
 
 2) QA
 
-[results_2](opengpt7.png "Table 3 from papers")
+![results_2](opengpt7.png "Table 3 from papers")
 
 Image credit - Table 3 from paper
 
 
 3) Classification  
 
-[results_3](opengpt8.png "Table 4 from papers")
+![results_3](opengpt8.png "Table 4 from papers")
 
 Image credit - Table 4 from paper  
 
@@ -131,6 +131,6 @@ Image credit - Table 4 from paper
 
 ## Ablation analysis  
 
-[ablation4](opengpt9.png "Table 5 from papers")  
+![ablation4](opengpt9.png "Table 5 from papers")  
 
 Image credit - Table 5 from paper 

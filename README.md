@@ -19,4 +19,5 @@
   - [Luong_Attention_2015](/NLP/attention_luong_2015/Attention_Luong_2015.md)
   - [Cheng_LSTMN_2016](/NLP/lstmn_cheng_2016/LSTMN_Cheng_2016.md)
   - [Attention is all you need 2016](/NLP/transformers_vaswani_2017/transformers_attention_vaswani_2017.md)
+  - [GPT_radford_2018](/NLP/opengpt_radford_2018/opengpt_radford_2018.md)
 

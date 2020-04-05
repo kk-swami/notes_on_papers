@@ -21,7 +21,8 @@ Current SOTA systems for transfer learning use a combination of pre-training and
 started with the philosophy of [w2vec](../w2vec1_mikolov_2013/w2vec1_mikolov_2013.md) and [glove](../glove_pennington_2014/glove_pennington_2014.ipynb)
 , where  word embeddings are transferred between tasks , moved to transferring higher level representations 
 of recurrent networks between tasks ([ELMO](../elmo_peters_2018/Elmo_peters_2018.md) and [ULMFIT](../ulmfit_howard_ruder_2018/ulmfit_howard_ruder_2018.md)) 
-and finally using self-attention blocks with a [transformer](../transformers_vaswani_2017/transformers_attention_vaswani_2017.md) architecure ([OpenGPT](opengpt_radford_2018.md) and [BERT])
+and finally using self-attention blocks with a [transformer](../transformers_vaswani_2017/transformers_attention_vaswani_2017.md) architecure ([OpenGPT](../opengpt_radford_2018/opengpt_radford_2018.md) and 
+[BERT](../bert_devliln_2018/bert_devlin_2018.md))
 
 
 The above methods involve minimal (or more) supervised training for the specific task, here, the authors 

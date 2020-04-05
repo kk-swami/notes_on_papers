@@ -61,7 +61,7 @@ Trained for 10 epochs, obtaining perplexity of 39.7
 
 For domain specific tasks, finetuning of the language model helps  
 
-6) Note - In comparison with [OpenGPT](../opengpt_radford_2018/opengpt_radford_2018.md) and [BERT], one key idea here is shallow concatenation 
+6) Note - In comparison with [OpenGPT](../opengpt_radford_2018/opengpt_radford_2018.md) and [BERT](../bert_devlin_2018/bert_devlin_2018.md)), one key idea here is shallow concatenation 
 ie forward and backward LM's are trained indepedently across all layers, and combined using the equation in step 2 for the final task of interest. 
 Why independent and not jointly ? because if it were trained jointly, it would be cheating, where 
 the backward model has seen the future and can tell the forward model that .

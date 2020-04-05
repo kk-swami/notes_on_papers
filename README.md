@@ -15,11 +15,12 @@
   - [ELMo Peters et al 2018 ](./NLP/elmo_peters_2018/Elmo_peters_2018.md)
   - [CNN with w2vec Kim 2014](./NLP/cnn_textclassification_kim_2014/cnn_textclassification_kim_2014.md)
   - [AWD LSTM Merity etal 2017](./NLP/awdlstm_merity_2017/AWDLSTM_merity_2017.md)
-  - [Bahdanau Attention 2015](/NLP/attention_bahdanau_2015/Attention_Bahdanau_2015.md)
-  - [Luong_Attention_2015](/NLP/attention_luong_2015/Attention_Luong_2015.md)
-  - [Cheng_LSTMN_2016](/NLP/lstmn_cheng_2016/LSTMN_Cheng_2016.md)
+  - [Attention_Bahdanau 2015](/NLP/attention_bahdanau_2015/Attention_Bahdanau_2015.md)
+  - [Attention_Luong_2015](/NLP/attention_luong_2015/Attention_Luong_2015.md)
+  - [LSTMN_Cheng_2016](/NLP/lstmn_cheng_2016/LSTMN_Cheng_2016.md)
   - [Attention is all you need 2016](/NLP/transformers_vaswani_2017/transformers_attention_vaswani_2017.md)
   - [GPT_radford_2018](/NLP/opengpt_radford_2018/opengpt_radford_2018.md)
   - [GPT_radford_2018_2](/NLP/opengpt2_radford_2018/opengpt2_radford_2018.md)
+  - [Bert_Devlin_2018](/NLP/bert_devlin_2018/bert_devlin_2018.md)
   
 

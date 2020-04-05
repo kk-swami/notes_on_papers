@@ -18,8 +18,8 @@ independent of context
 
 # Context and summary     
 
-Models like [w2vec](./NLP/nw2vec_1_mikolov_2013.md) or [glove](./NLP/glove_pennington_2014.ipynb) use static embeddings ie the representation of a word  
-does not depend on context. This can be enriched by using [subword information](fasttext_bojanowski_2017.md) which is useful for getting better representations of unseen words  
+Models like [w2vec](../w2vec1_mikolov_2013/w2vec1_mikolov_2013.md) or [glove](../glove_pennington_2014/glove_pennington_2014.ipynb) use static embeddings ie the representation of a word  
+does not depend on context. This can be enriched by using [subword information](../fasttext_bojanowski_2017/fasttext_bojanowski_2017.md) which is useful for getting better representations of unseen words  
 However, these representations are still context independent. Previous techniques which leverage contextual representations to learn embeddings are context2vec (Melamud et al 2016) which uses bidirectional LSTM to encode 
 context around pivot word, or using the pivot word itself in the representation (CoVe, McCann etal 2017 uses encoders of a supervised Neural machine translation system, or unsupervised language models)  
 Also , previous work indicates that different layers of a deep biRNN encode different types of information.  
@@ -60,6 +60,14 @@ Character representation uses 2048 character n-gram convolutional filters follow
 Trained for 10 epochs, obtaining perplexity of 39.7 
 
 For domain specific tasks, finetuning of the language model helps  
+
+6) Note - In comparison with [OpenGPT](../opengpt_radford_2018/opengpt_radford_2018.md) and [BERT], one key idea here is shallow concatenation 
+ie forward and backward LM's are trained indepedently across all layers, and combined using the equation in step 2 for the final task of interest. 
+Why independent and not jointly ? because if it were trained jointly, it would be cheating, where 
+the backward model has seen the future and can tell the forward model that .
+OpenGPT handles this by using only a unidirectional language model (which has the obvious disadvantage 
+that you are learning only from previous words and not next words); BERT handles this 
+by masking [here's a nice explanation](https://www.reddit.com/r/MachineLearning/comments/e71vyr/d_why_does_the_bert_paper_say_that_standard/f9xox9b/)
 
 
 

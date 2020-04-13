@@ -267,6 +267,8 @@ Instead of the finetuning approach, get features from different hidden states si
 Tested on NER task, found to be effective  (contextual embeddings from BERT used as an input to randomly initinalized 2 layer 768 dimensional
 Bi-LSTM followed by classification layer)  
 
+
+
 ![bert_features](bert_pic12.png "Table 7 from paper") 
 
 Image credit - table 7 from paper  

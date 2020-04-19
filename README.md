@@ -23,5 +23,6 @@
   - [GPT_radford_2018_2](/NLP/opengpt2_radford_2018/opengpt2_radford_2018.md)
   - [Bert_Devlin_2018](/NLP/bert_devlin_2018/bert_devlin_2018.md)
   - [roberta_Liu_2019](/NLP/roberta_liu_2019/roberta_liu_2019.md)
+  - [albert_Lan_2020](/NLP/albert_lan_2020/albert_lan_2020.md)
   
 

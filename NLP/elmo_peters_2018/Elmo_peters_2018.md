@@ -48,9 +48,10 @@ Rk = {xk; hforwardk,j; hbackwardk,j | j=1..L} is the representation of the kth t
     Image credit equation 1 in paper   
     
     Note : This is similar to the attention formulation, except that for attention, weighted sum of hidden representations across tokens is obtained, here , for each token weighted sum of hidden representations across layers is obtained  
+    The parameters gamma and s are learned during the task. s are softmax normalized. 
     
 
-3) In context of a supervised model, freeze the weights of biLM, for each token concatenate ELMO vector ELMOktask with xk, and pass {xk;ELMOktask} to task RNN.  
+3) In context of a supervised model, freeze the weights of biLM, for each token concatenate ELMO vector ELMOktask with xk (a pre-trained word or character embedding based representation of token k such as w2vec, glove, etc), and pass {xk;ELMOktask} to task RNN.  
 For some tasks like SNLI and SQUAD, include ELMO at output of RNN too ! Concatenate ELMOk with hk 
 
 4) A moderate amount of dropout is added to ELMo   
@@ -144,5 +145,7 @@ reprentation are more important than biLM
     
     
   
+# References
 
+https://www.mihaileric.com/posts/deep-contextualized-word-representations-elmo/
 

@@ -24,5 +24,6 @@
   - [Bert_Devlin_2018](/NLP/bert_devlin_2018/bert_devlin_2018.md)
   - [roberta_Liu_2019](/NLP/roberta_liu_2019/roberta_liu_2019.md)
   - [albert_Lan_2020](/NLP/albert_lan_2020/albert_lan_2020.md)
+  - [xlnet_yang_2019](/NLP/albert_lan_2020/yang_xlnet_2019.md)
   
 

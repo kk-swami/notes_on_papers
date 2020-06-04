@@ -274,5 +274,7 @@ Bi-LSTM followed by classification layer)
 Image credit - table 7 from paper  
 
 
+# References 
+[1]: https://medium.com/dissecting-bert/dissecting-bert-part2-335ff2ed9c73
 
 

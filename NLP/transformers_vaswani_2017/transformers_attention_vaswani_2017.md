@@ -170,3 +170,5 @@ dropout to sums of embedding and positional encoding in both encoder and decoder
 Image credit - Table 2 in paper
 
 
+# References
+[1] : https://medium.com/dissecting-bert/dissecting-bert-part-1-d3c3d495cdb3

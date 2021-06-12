@@ -26,5 +26,7 @@
   - [albert_Lan_2020](/NLP/albert_lan_2020/albert_lan_2020.md)
   - [xlnet_yang_2019](/NLP/yang_xlnet_2019/yang_xlnet_2019.md)
   - [dai_transformerxl_2019](/NLP/dai_transformerXL_2019/dai_transformerXL_2019.md)
+  - [batchnorm_ioffe_2015](/NLP/batchnorm_ioffe_2015/batchnorm_ioffe_2015.md)
+  - [layernorm_ba_2016](/NLP/layernorm_ba_2016/layernorm_ba_2016.md)
   
 

@@ -28,5 +28,6 @@
   - [dai_transformerxl_2019](/NLP/dai_transformerXL_2019/dai_transformerXL_2019.md)
   - [batchnorm_ioffe_2015](/NLP/batchnorm_ioffe_2015/batchnorm_ioffe_2015.md)
   - [layernorm_ba_2016](/NLP/layernorm_ba_2016/layernorm_ba_2016.md)
+  - [electra_clarke_2020](/NLP/electra_clarke_2020/electra_clarke_2020.md)
   
 
